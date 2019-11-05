@@ -1,0 +1,12 @@
+version: '3'
+
+services: 
+  awstats:
+    image: awstats:php-7.2-alpine-104
+    volumes:
+      - ./data/var/log/awstats:/var/log/awstats:ro
+      - ./data/var/lib/awstats:/var/lib/awstats
+      # - ./awstats.localhost.conf:/etc/awstats/awstats.localhost.conf #有可能需要调整logformat or change conf
+    ports:
+      - 9999:80
+ 
